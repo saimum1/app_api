@@ -50,7 +50,9 @@ app.use("/api/users" , userRouter);
 app.use("/api/posts" , postRouter);
 app.use("/api/categories" , catRouter);
 app.use("/images", express.static(path.join(__dirname+"/images")));
-
+app.get("/",  (req,res)=>{
+    res.sendFile(__dirname+"/index.html");
+})
 
 app.listen(port , ()=>{
     console.log(`http://localhost:${port}`);
